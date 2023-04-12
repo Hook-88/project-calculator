@@ -2,17 +2,17 @@ const calculation = {
   firstValueString: '',
   firstValueNumber: 0,
   operator: false,
-  secondStringValue: '',
+  secondValueString: '',
   secondValueNumber: 0,
 
   numberButtons: Array.from(document.querySelectorAll('.numberButton')),
-  operatorButtons: [],
+  operatorButtons: Array.from(document.querySelectorAll('.operator-button')),
 
   addCharToString (char) {
     if (!this.operator) {
       this.firstValueString += char;
     } else {
-      this.secondStringValue += char;
+      this.secondValueString += char;
     }
   },
   handleNumberButtons() {
@@ -31,14 +31,21 @@ const calculation = {
   },
   setFirstValueNumber(){
     this.firstValueNumber = parseFloat(this.firstValueString);
-    this.firstValueString = '' 
+    this.firstValueString = ''; 
   },
-  handleOperatorButtons(operatorType) {
-    
+
+  handleOperatorButtons() {
+    this.operatorButtons.forEach(function (operatorButton) {
+      operatorButton.addEventListener('click', function (e) {
+        calculation.operator = e.target.value;
+        calculation.setFirstValueNumber();
+      })
+    })
   },
   startCalculator() {
     this.handleNumberButtons();
     this.handleClearButton();
+    this.handleOperatorButtons();
   }
 }
 
