@@ -1,10 +1,27 @@
+body {
+  display: grid;
+  Grid-template-rows: 1fr auto;
+  min-height: 100%;
+}
+
 button {
   padding: 1rem 0;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+footer {
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 
 div#calculator-container {
   width: 33%;
   display: grid;
+  margin: 0 auto;
   gap: 1rem;
   grid-template-columns: repeat(4, 1fr);
 }
