@@ -1,36 +1,28 @@
-class Calculation {
-  constructor(firstValue, operator, secondValue) {
-    this._firstValue = firstValue;
-    this._operator = operator;
-    this._secondValue = secondValue;
-  }
+const calculation = {
+  firstValueString: '',
+  firstValueNumber: 0,
+  operator: false,
+  secondStringValue: '',
+  secondValueNumber: 0,
 
-  get firstValue() {
-    return this._firstValue;
-  }
-  get operator() {
-    return this._operator;
-  }
-  get secondValue() {
-    return this._secondValue;
-  }
+  numberButtons: Array.from(document.querySelectorAll('.numberButton')),
+  operatorButtons: [],
 
-  set firstValue(value) {
-    if (typeof value !== 'number') {
-      console.log('Error value is not a number')
-      return false;
+  addCharToString (char) {
+    if (!this.operator) {
+      this.firstValueString += char;
+    } else {
+      this.secondStringValue += char;
     }
-    this._firstValue = value;
+  },
+  handleNumberButtons() {
+    this.numberButtons.forEach(function (numberButton) {
+      numberButton.addEventListener('click', function (e) {
+        calculation.addCharToString(e.target.value);
+        console.log(calculation.firstValueString);
+      })
+    })
   }
-  set operator(value) {
-    this._operator = value;
-  }
-  set secondValue(value) {
-    if (typeof value !== 'number') {
-      console.log('Error value is not a number')
-      return false;
-    }
-    this._firstValue = value;
-  }
-
 }
+
+calculation.handleNumberButtons();
