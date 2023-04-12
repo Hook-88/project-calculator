@@ -1,3 +1,7 @@
+button {
+  padding: 1rem 0;
+}
+
 div#calculator-container {
   width: 33%;
   display: grid;
@@ -8,6 +12,9 @@ div#calculator-container {
 section#calculator-screen {
   text-align: end;
   background-color: antiquewhite;
+  padding: 1rem 1rem 1rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .grid-col-span-4 {
