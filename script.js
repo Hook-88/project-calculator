@@ -19,7 +19,6 @@ const calculation = {
     this.numberButtons.forEach(function (numberButton) {
       numberButton.addEventListener('click', function (e) {
         calculation.addCharToString(e.target.value);
-        console.log(calculation.firstValueString);
       })
     })
   },
@@ -27,8 +26,15 @@ const calculation = {
     const clearButton = document.querySelector('#clear-button');
     clearButton.addEventListener('click', function () {
       calculation.firstValueString = '';
-      console.log(calculation.firstValueString);
+      calculation.operator = false;
     })
+  },
+  setFirstValueNumber(){
+    this.firstValueNumber = parseFloat(this.firstValueString);
+    this.firstValueString = '' 
+  },
+  handleOperatorButtons(operatorType) {
+    
   },
   startCalculator() {
     this.handleNumberButtons();
