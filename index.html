@@ -12,24 +12,30 @@
     <h1>Project Calculator</h1>
   </header>
   <main>
-    <section>0</section>
-    <button value="clear">clear</button>
-    <button value="1">1</button>
-    <button value="2">2</button>
-    <button value="3">3</button>
-    <button value="4">4</button>
-    <button value="5">5</button>
-    <button value="6">6</button>
-    <button value="7">7</button>
-    <button value="8">8</button>
-    <button value="9">9</button>
-    <button value="0">0</button>
-    <button value="dot">.</button>
-    <button value="devide">/</button>
-    <button value="multiply">*</button>
-    <button value="minus">-</button>
-    <button value="add">+</button>
-    <button value="calculate">=</button>
+    <div id="calculator-container">
+      <section class="grid-col-span-4" id="calculator-screen">0</section>
+      <button class="grid-col-span-3" value="clear">clear</button>
+      <button value="devide" class="calculator-operators">/</button>
+      <button value="1">1</button>
+      <button value="2">2</button>
+      <button value="3">3</button>
+      <button value="multiply" class="calculator-operators">*</button>
+      <button value="4">4</button>
+      <button value="5">5</button>
+      <button value="6">6</button>
+      <button value="minus" class="calculator-operators">-</button>
+      <button value="7">7</button>
+      <button value="8">8</button>
+      <button value="9">9</button>
+      <button value="add" class="calculator-operators">+</button>
+      <button class="grid-col-span-2" value="0">0</button>
+      <button value="dot">.</button>
+      
+      
+      
+      
+      <button value="calculate">=</button>
+    </div>
   </main>
   <footer>
     <p>footer-text</p>

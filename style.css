@@ -1,0 +1,33 @@
+div#calculator-container {
+  width: 33%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+section#calculator-screen {
+  text-align: end;
+  background-color: antiquewhite;
+}
+
+.grid-col-span-4 {
+  grid-column: span 4;
+}
+
+.grid-col-span-3 {
+  grid-column: span 3;
+}
+
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+.calculator-operators {
+  background-color: darkorange;
+  color: antiquewhite;
+  border-radius: 5px;
+  border: none;
+}
+.calculator-operators:hover {
+  background-color: rgb(134, 92, 52);
+}
