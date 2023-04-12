@@ -22,7 +22,18 @@ const calculation = {
         console.log(calculation.firstValueString);
       })
     })
+  },
+  handleClearButton() {
+    const clearButton = document.querySelector('#clear-button');
+    clearButton.addEventListener('click', function () {
+      calculation.firstValueString = '';
+      console.log(calculation.firstValueString);
+    })
+  },
+  startCalculator() {
+    this.handleNumberButtons();
+    this.handleClearButton();
   }
 }
 
-calculation.handleNumberButtons();
+calculation.startCalculator();
